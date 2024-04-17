@@ -92,6 +92,15 @@ TLDR:
 * To do so, download and install the Custota module in magsik and reboot.
 * Open Custota and set the OTA server URL to point to this OTA server:  https://schnatterer.github.io/rooted-graphene/magisk
 
+## Remove root / rootless
+
+TODO flavors see 
+
+https://schnatterer.github.io/rooted-graphene/rootless/
+
+note that you can update to this flavor to disable root. However, after the upgrade, custota will no longer work. For re-enabling root, you will have to use adb sideload
+
+
 ## Script
 
 You can use the script in this repo to create your own OTAs and run your own OTA server.
@@ -115,7 +124,7 @@ For IDs see [grapheneos.org/releases](https://grapheneos.org/releases). For Magi
 
 ### Upload patched OTAs as GH release and provide OTA server via GH pages
 
-See [GitHub action](.github/workflows/release.yaml) for automating this.
+See [GitHub action](.github/workflows/release-single.yaml) for automating this.
 
 ```shell
 GITHUB_TOKEN=gh... \
@@ -163,11 +172,7 @@ DEBUG=1 \
 
 ## Magisk preinit strings
 
-```shell
-preinit["cheetah"]="persist" # Pixel Pro 7 https://xdaforums.com/t/guide-to-lock-bootloader-while-using-rooted-otaos-magisk-root.4510295/page-5#post-88499289)
-preinit["oriole"]="=metadata" # Pixel 6
-preinit["shiba"]="=sda10" # Pixel 8
-```
+See [release-multiple.yaml](.github/workflows/release-multiple.yaml) for examples.
 
 How to extract:
 
