@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "full": {
+    "location_ota": "https://github.com/0cwa/rooted-graphene/releases/download/2024080600/bramble-2024080600-magisk-canary-27006-553472b.zip",
+    "location_csig": "https://github.com/0cwa/rooted-graphene/releases/download/2024080600/bramble-2024080600-magisk-canary-27006-553472b.zip.csig"
+  }
+}
