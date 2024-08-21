@@ -15,19 +15,19 @@ CERT_OTA_BASE64=${CERT_OTA_BASE64:-''}
 # PASSPHRASE_OTA
 
 # Enable debug output only after sensitive vars have been set, to reduce risk of leak
-DEBUG=${DEBUG:-''}
+DEBUG=${DEBUG:-'true'}
 if [[ -n "${DEBUG}" ]]; then set -x; fi
 
 # Mandatory params
-DEVICE_ID=${DEVICE_ID:-} # See here for device IDs https://grapheneos.org/releases
+DEVICE_ID=${DEVICE_ID:-'bramble'} # See here for device IDs https://grapheneos.org/releases
 GITHUB_TOKEN=${GITHUB_TOKEN:-''}
 GITHUB_REPO=${GITHUB_REPO:-''}
 
 # Optional
 # If you want an OTA patched with magisk, set the preinit for your device
-MAGISK_PREINIT_DEVICE=${MAGISK_PREINIT_DEVICE:-}
+MAGISK_PREINIT_DEVICE=${MAGISK_PREINIT_DEVICE:"sda15"}
 # Skip creation of rootless OTA by setting to "true"
-SKIP_ROOTLESS=${SKIP_ROOTLESS:-'false'}
+SKIP_ROOTLESS=${SKIP_ROOTLESS:-'true'}
 # https://grapheneos.org/releases#stable-channel
 OTA_VERSION=${OTA_VERSION:-'latest'}
 
@@ -44,7 +44,7 @@ FORCE_OTA_SERVER_UPLOAD=${FORCE_OTA_SERVER_UPLOAD:-'false'}
 OTA_CHANNEL=${OTA_CHANNEL:-stable} # Alternative: 'alpha'
 OTA_BASE_URL="https://releases.grapheneos.org"
 
-AVB_ROOT_VERSION=3.5.0
+AVB_ROOT_VERSION=3.6.0
 
 CUSTOTA_VERSION=4.8
 
@@ -187,7 +187,7 @@ function downloadAndroidDependencies() {
 
   mkdir -p .tmp
   if ! ls ".tmp/magisk-$MAGISK_VERSION.apk" >/dev/null 2>&1 && [[ "${POTENTIAL_ASSETS['magisk']+isset}" ]]; then
-    curl --fail -sLo ".tmp/magisk-$MAGISK_VERSION.apk" "https://github.com/topjohnwu/Magisk/releases/download/$MAGISK_VERSION/Magisk-$MAGISK_VERSION.apk"
+    curl --fail -sLo ".tmp/magisk-$MAGISK_VERSION.apk" "https://github.com/pixincreate/Magisk/releases/download/$MAGISK_VERSION/Magisk-$MAGISK_VERSION.apk"
   fi
 
   if ! ls ".tmp/$OTA_TARGET.zip" >/dev/null 2>&1; then
@@ -199,7 +199,7 @@ function findLatestVersion() {
   checkMandatoryVariable DEVICE_ID
 
   if [[ "$MAGISK_VERSION" == 'latest' ]]; then
-    MAGISK_VERSION=$(curl --fail -sL -I -o /dev/null -w '%{url_effective}' https://github.com/topjohnwu/Magisk/releases/latest | sed 's/.*\/tag\///;')
+    MAGISK_VERSION=$(curl --fail -sL -I -o /dev/null -w '%{url_effective}' https://github.com/pixincreate/Magisk/releases/latest | sed 's/.*\/tag\///;')
   fi
   echo "Magisk version: $MAGISK_VERSION"
 
