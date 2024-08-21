@@ -253,13 +253,13 @@ function patchOTAs() {
        fi
           
       # If env vars not set, passphrases will be queried interactively
-      if [ -v PASSPHRASE_AVB ]; then
-        args+=("--pass-avb-env-var" "PASSPHRASE_AVB")
-      fi
+#      if [ -v PASSPHRASE_AVB ]; then
+ #       args+=("--pass-avb-env-var" "PASSPHRASE_AVB")
+  #    fi
     
-      if [ -v PASSPHRASE_OTA ]; then
-        args+=("--pass-ota-env-var" "PASSPHRASE_OTA")
-      fi
+#      if [ -v PASSPHRASE_OTA ]; then
+ #       args+=("--pass-ota-env-var" "PASSPHRASE_OTA")
+  #    fi
         
       .tmp/avbroot ota patch "${args[@]}"
     fi
@@ -335,9 +335,9 @@ function createOtaServerData() {
     args+=("--cert" "$CERT_OTA")
   
     # If env vars not set, passphrases will be queried interactively
-    if [ -v PASSPHRASE_OTA ]; then
-      args+=("--passphrase-env-var" "PASSPHRASE_OTA")
-    fi
+#    if [ -v PASSPHRASE_OTA ]; then
+ #     args+=("--passphrase-env-var" "PASSPHRASE_OTA")
+  #  fi
   
     .tmp/custota-tool gen-csig "${args[@]}"
   
