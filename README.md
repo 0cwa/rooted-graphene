@@ -1,6 +1,8 @@
 rooted-graphene
 ===
 
+For Pixel 4a 5g, with pixincreate's magisk for (buggy) zygisk support.  This is my first time doing this stuff.  This is experimental, do not use this as your only phone.
+===
 
 GrapheneOS over the air updates (OTAs) patched with Magisk using [avbroot](https://github.com/chenxiaolong/avbroot) allowing for AVB and locked bootloader *and* root access.
 Provides its own OTA server for [Custota](https://github.com/chenxiaolong/Custota) magisk module.
