@@ -2,9 +2,9 @@
 
 # Requires git, jq, and curl
 
-#KEY_AVB=${KEY_AVB:-avb.key}
-#KEY_OTA=${KEY_OTA:-ota.key}
-#CERT_OTA=${CERT_OTA:-ota.crt}
+KEY_AVB=${KEY_AVB:-avb.key}
+KEY_OTA=${KEY_OTA:-ota.key}
+CERT_OTA=${CERT_OTA:-ota.crt}
 # Or else, set these env vars
 #KEY_AVB_BASE64=${KEY_AVB_BASE64:-''}
 #KEY_OTA_BASE64=${KEY_OTA_BASE64:-''}
@@ -25,7 +25,7 @@ GITHUB_REPO=${GITHUB_REPO:-'0cwa/rooted-graphene'}
 
 # Optional
 # If you want an OTA patched with magisk, set the preinit for your device
-MAGISK_PREINIT_DEVICE=${MAGISK_PREINIT_DEVICE:"sda15"}
+MAGISK_PREINIT_DEVICE=${MAGISK_PREINIT_DEVICE:-sda15}
 # Skip creation of rootless OTA by setting to "true"
 SKIP_ROOTLESS=${SKIP_ROOTLESS:-'true'}
 # https://grapheneos.org/releases#stable-channel
