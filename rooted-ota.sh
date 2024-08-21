@@ -15,7 +15,7 @@ CERT_OTA=${CERT_OTA:-ota.crt}
 # PASSPHRASE_OTA
 
 # Enable debug output only after sensitive vars have been set, to reduce risk of leak
-DEBUG=${DEBUG:-'true'}
+DEBUG=${DEBUG:-'false'}
 if [[ -n "${DEBUG}" ]]; then set -x; fi
 
 # Mandatory params
@@ -27,7 +27,7 @@ GITHUB_REPO=${GITHUB_REPO:-'0cwa/rooted-graphene'}
 # If you want an OTA patched with magisk, set the preinit for your device
 MAGISK_PREINIT_DEVICE=${MAGISK_PREINIT_DEVICE:-sda15}
 # Skip creation of rootless OTA by setting to "true"
-SKIP_ROOTLESS=${SKIP_ROOTLESS:-'true'}
+SKIP_ROOTLESS=${SKIP_ROOTLESS:-'false'}
 # https://grapheneos.org/releases#stable-channel
 OTA_VERSION=${OTA_VERSION:-'latest'}
 
