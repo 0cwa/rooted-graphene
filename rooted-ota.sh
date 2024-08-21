@@ -2,13 +2,13 @@
 
 # Requires git, jq, and curl
 
-KEY_AVB=${KEY_AVB:-avb.key}
-KEY_OTA=${KEY_OTA:-ota.key}
-CERT_OTA=${CERT_OTA:-ota.crt}
+#KEY_AVB=${KEY_AVB:-avb.key}
+#KEY_OTA=${KEY_OTA:-ota.key}
+#CERT_OTA=${CERT_OTA:-ota.crt}
 # Or else, set these env vars
-KEY_AVB_BASE64=${KEY_AVB_BASE64:-''}
-KEY_OTA_BASE64=${KEY_OTA_BASE64:-''}
-CERT_OTA_BASE64=${CERT_OTA_BASE64:-''}
+#KEY_AVB_BASE64=${KEY_AVB_BASE64:-''}
+#KEY_OTA_BASE64=${KEY_OTA_BASE64:-''}
+#CERT_OTA_BASE64=${CERT_OTA_BASE64:-''}
 
 # Set these env vars, or else these params will be queries interactively
 # PASSPHRASE_AVB
