@@ -21,7 +21,7 @@ if [[ -n "${DEBUG}" ]]; then set -x; fi
 # Mandatory params
 DEVICE_ID=${DEVICE_ID:-'bramble'} # See here for device IDs https://grapheneos.org/releases
 GITHUB_TOKEN=${GITHUB_TOKEN:-''}
-GITHUB_REPO=${GITHUB_REPO:-''}
+GITHUB_REPO=${GITHUB_REPO:-'0cwa/rooted-graphene'}
 
 # Optional
 # If you want an OTA patched with magisk, set the preinit for your device
@@ -35,7 +35,7 @@ OTA_VERSION=${OTA_VERSION:-'latest'}
 # Breaking changes in magisk might need to be adapted in new avbroot version
 # Find latest magisk version here: https://github.com/topjohnwu/Magisk/releases, or:
 # curl --fail -sL -I -o /dev/null -w '%{url_effective}' https://github.com/topjohnwu/Magisk/releases/latest | sed 's/.*\/tag\///;'
-MAGISK_VERSION=${MAGISK_VERSION:-'v27.0'}
+MAGISK_VERSION=${MAGISK_VERSION:-'canary-27006'}
 
 SKIP_CLEANUP=${SKIP_CLEANUP:-''}
 # Set asset released by this script to latest version, even when OTA_VERSION already exists for this device
