@@ -1,7 +1,7 @@
 {
   "version": 2,
   "full": {
-    "location_ota": "https://github.com/0cwa/rooted-graphene-bramble/releases/download/2024080600/bramble-2024080600-rootless-9383379.zip",
-    "location_csig": "https://github.com/0cwa/rooted-graphene-bramble/releases/download/2024080600/bramble-2024080600-rootless-9383379.zip.csig"
+    "location_ota": "https://github.com/0cwa/rooted-graphene-bramble/releases/download/2024082200/bramble-2024082200-rootless-9383379.zip",
+    "location_csig": "https://github.com/0cwa/rooted-graphene-bramble/releases/download/2024082200/bramble-2024082200-rootless-9383379.zip.csig"
   }
 }
